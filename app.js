@@ -21,3 +21,15 @@ document.addEventListener('pointermove',moveLilies,{passive:true});
 document.addEventListener('pointerdown',moveLilies,{passive:true});
 document.addEventListener('pointerleave',()=>{cancelAnimationFrame(gardenFrame);garden.style.setProperty('--lx','0px');garden.style.setProperty('--ly','0px')});
 motionPreference.addEventListener('change',()=>{cancelAnimationFrame(gardenFrame);garden.style.setProperty('--lx','0px');garden.style.setProperty('--ly','0px')});
+
+let royalTimer;
+$('#crownPrincess').onclick=()=>{
+ const section=$('#princesa');
+ clearTimeout(royalTimer);
+ section.classList.remove('royal-celebrating');
+ $('#crownPrincess').setAttribute('aria-pressed','true');
+ $('#crownPrincess').textContent='¡Feliz día, princesa!';
+ $('#royalMessage').textContent='Tu corona es esa luz tan bonita que llevas dentro. ¡Feliz cumpleaños y feliz Día de la Princesa, Jazmín!';
+ requestAnimationFrame(()=>requestAnimationFrame(()=>section.classList.add('royal-celebrating')));
+ royalTimer=setTimeout(()=>section.classList.remove('royal-celebrating'),1900);
+};

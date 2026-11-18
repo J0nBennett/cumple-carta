@@ -6,3 +6,16 @@
 /* Four wishes: balanced pairs on desktop, stacked on mobile. */
 .wishes{grid-template-columns:repeat(2,minmax(0,1fr))}.wish-joke{background:var(--pink)}
 @media(max-width:767px){.wishes{grid-template-columns:1fr}}
+
+.princess-section{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding-top:85px;padding-bottom:75px}
+.princess-art{position:relative;display:flex;align-items:end;justify-content:center;min-height:350px;border-radius:50% 50% 15% 15%;background:radial-gradient(ellipse,var(--pink),transparent 72%)}
+.princess-figure{display:block;width:50%;aspect-ratio:3/4;background-image:url('princesses.png');background-size:200% 100%;background-repeat:no-repeat;transform-origin:50% 85%;filter:drop-shadow(0 9px 9px #9d456518)}
+.princess-left{background-position:left center}.princess-right{background-position:right center}
+.royal-date{font-size:10px;letter-spacing:1.3px;font-weight:700;color:var(--muted)}
+.princess-copy h2{font-size:40px}.princess-copy>p:not(.royal-date){color:var(--muted);max-width:390px}.princess-copy .button{margin-top:12px}.royal-message{font-size:13px;min-height:45px}
+.royal-spark{position:absolute;color:var(--accent);font-size:35px;pointer-events:none}.spark-a{left:9%;top:15%}.spark-b{right:7%;top:3%;font-size:46px}.spark-c{left:48%;bottom:5%;font-size:28px}
+@keyframes royalDance{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-12px) rotate(3deg)}}
+@keyframes royalTwirl{0%{transform:rotate(0) scale(1)}50%{transform:rotate(12deg) scale(1.05)}100%{transform:rotate(0) scale(1)}}
+@keyframes royalTwinkle{0%,100%{opacity:.25;transform:scale(.7)}50%{opacity:1;transform:scale(1.1)}}
+@media(prefers-reduced-motion:no-preference){.princess-left{animation:royalDance 5s ease-in-out infinite}.princess-right{animation:royalDance 5.5s ease-in-out -2s infinite reverse}.royal-spark{animation:royalTwinkle 3s ease-in-out infinite}.spark-b{animation-delay:.8s}.spark-c{animation-delay:1.6s}.royal-celebrating .princess-figure{animation:royalTwirl .85s ease-in-out 2}.royal-celebrating .royal-spark{animation:royalTwinkle .6s ease-in-out 3}}
+@media(max-width:767px){.princess-section{grid-template-columns:1fr;gap:15px;padding-top:45px;padding-bottom:45px}.princess-art{width:100%;max-width:380px;min-height:270px;justify-self:center}.princess-copy h2{font-size:33px}.royal-date{font-size:9px;letter-spacing:.8px}nav{gap:10px}nav a{font-size:10px}.brand{font-size:17px}}
